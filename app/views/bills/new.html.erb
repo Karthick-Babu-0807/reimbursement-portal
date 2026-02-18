@@ -1,0 +1,29 @@
+<div class="container mt-4">
+  <div class="card shadow-sm mx-auto" style="max-width: 500px;">
+    <div class="card-body">
+      <h3 class="card-title mb-4">Reimbursement Form</h3>
+      
+      <%= form_with(model: @bill, local: true) do |f| %>
+        <div class="mb-3">
+          <%= f.label :bill_type, "Type", class: "form-label" %>
+          <%= f.select :bill_type, 
+              Bill.bill_types.keys.map { |t| [t.humanize, t] }, 
+              { prompt: "Select Type" }, 
+              { class: "form-select", required: true } %>
+        </div>
+
+        <div class="mb-3">
+          <%= f.label :amount, "Amount", class: "form-label" %>
+          <div class="input-group">
+            <span class="input-group-text">INR</span>
+            <%= f.number_field :amount, class: "form-control", placeholder: "Enter amount", required: true, min: 1 %>
+          </div>
+        </div>
+
+        <div class="d-grid">
+          <%= f.submit "Submit", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
