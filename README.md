@@ -39,8 +39,12 @@ A Ruby on Rails application designed for organizations to manage employee reimbu
    ```
    Visit http://localhost:3000 in your browser.
 
-## Demo Credentials
-```
-Admin Email: admin@test.com
-Password: Password123
-```
+## 🔑 Demo & Testing Credentials
+
+### Admin Access
+- **Email:** admin@test.com
+- **Password:** Password@123
+
+### Employee Access
+- **Default Password:** Welcome@123
+- **Note:** Use the Admin dashboard to create an employee account first, then log in with that email and this default password.
